@@ -32,7 +32,7 @@ const Signup = () => {
 
     if (userData) {
       console.log("success");
-      setUser(userData); // Set user data in context
+      // setUser(userData); // Set user data in context
       navigate("/"); // Redirect to home or desired page
     } else {
       console.error("Signup failed:", error);
