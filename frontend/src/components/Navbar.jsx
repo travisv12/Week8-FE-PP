@@ -2,12 +2,15 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import LoadingSpinner from "./LoadingSpinner";
-import ThemeContext from "../context/ThemeContext";
+// import ThemeContext from "../context/ThemeContext";
+import { useTheme } from "../hooks/useTheme";
+import { useAuth } from "../hooks/useAuth";
 
 const Navbar = () => {
-  const { isAuthenticated, clearUser, email, isLoading } =
-    useContext(AuthContext);
-  const { toggleTheme } = useContext(ThemeContext);
+  const { clearUser, email, isLoading } = useContext(AuthContext);
+  const { isAuthenticated } = useAuth();
+  // const { toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useTheme();
 
   const handleClick = (e) => {
     clearUser(); // Log the user out by clearing their authentication data
@@ -19,7 +22,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav>
+    <nav className="navbar">
       <Link to="/">
         <h1>React Jobs</h1>
       </Link>

@@ -21,7 +21,7 @@ const Login = () => {
 
     if (userData) {
       console.log("Login successful:", userData);
-      setUser(userData);
+      // setUser(userData);
       navigate("/"); // Redirect to home or desired page
     } else {
       console.error("Login failed:", error);
