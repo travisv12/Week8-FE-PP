@@ -18,7 +18,7 @@ const Login = () => {
 
       if (userData) {
           console.log("Login successful:", userData);
-          setUser ({ token: response.data.token, email: formData.email }); // Set user data in context
+          setUser({ token: userData.token, email: userData.email }); // Set user data in context
           navigate("/"); // Redirect to home or desired page
       } else {
           console.error("Login failed:", error);
