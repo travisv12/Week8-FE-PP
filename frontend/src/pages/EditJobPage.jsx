@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
-// import { useContext } from "react";
-// import AuthContext from "../context/AuthContext";
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
 
 const EditJobPage = () => {
   const [job, setJob] = useState(null); // Initialize job state
@@ -18,9 +18,8 @@ const EditJobPage = () => {
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
 
-  // const { token, isLoading } = useContext(AuthContext); // Access Auth
+  const { token, isLoading } = useContext(AuthContext); // Access Auth
   const user = JSON.parse(localStorage.getItem("user"));
-  const token = user ? user.token : null;
 
   const navigate = useNavigate();
 

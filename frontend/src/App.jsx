@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ThemeProvider from "./context/ThemeProvider";
-// import AuthProvider from "./Context/AuthProvider";
+import AuthProvider from "./context/AuthProvider";
 // import RouteGuard from "./components/RouteGuard";
 
 // pages & components
@@ -15,7 +15,7 @@ import Signup from "./pages/Signup";
 
 const App = () => {
   return (
-    // <AuthProvider>
+    <AuthProvider>
     <ThemeProvider>
       <BrowserRouter>
         <div className="App">
