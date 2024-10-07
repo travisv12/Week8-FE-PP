@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useAuth } from "./useAuth";
 
 export default function useSignup(url) {
+     const { setUser } = useAuth();
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false); // Changed to false by default
 
@@ -22,8 +24,8 @@ export default function useSignup(url) {
             }
 
             // Save user data to localStorage
-            localStorage.setItem("user", JSON.stringify(user));
-
+            // localStorage.setItem("user", JSON.stringify(user));
+             setUser(user);
             setIsLoading(false);
             return user; // Return user data on success
         } catch (err) {
