@@ -59,7 +59,7 @@ const JobPage = () => {
 
     if (!token) {
       // Handle unauthorized access
-      console.log("You are not authorized to delete this joby");
+      console.log("You are not authorized to delete this job");
       return navigate("/");
     }
 

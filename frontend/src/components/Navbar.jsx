@@ -19,7 +19,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="navbar">
+    <nav>
       <Link to="/">
         <h1>React Jobs</h1>
       </Link>
